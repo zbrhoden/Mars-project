@@ -1,19 +1,21 @@
-database = [
-    colonys: {
+const database = {
+    colonies: [{
 
     }
-    
-    governors: {
+],
+    governors: [
+        {
 
     }
-    
-    facilities: {
+],
+    facilities: [{
 
     }
-    
-    minerals: {
+],
+    minerals: [{
 
     }
 ]
+}
 
 

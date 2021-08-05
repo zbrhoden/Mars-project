@@ -16,13 +16,15 @@ document.addEventListener(
 export const Minerals = () => {
     let html = "<ul>"
 
-    // This is how you have been converting objects to <li> elements
-    for (const mineral of minerals) {
-        html += `<li>
+    // Use .map() for converting objects to <li> elements
+    const listItems = minerals.map(mineral => {
+        return `<li>
             <input type="radio" name="mineral" value="${mineral.id}" /> ${mineral.type}
         </li>`
-    }
+    })
 
+    html += listItems.join("")
     html += "</ul>"
+
     return html
 }

@@ -6,14 +6,6 @@ const database = {
         {id: 4, name: "Krypton", inventory: 6},
         {id: 5, name: "Deimos Moon Base", inventory: 3},
     ],
-    
-    minerals: [
-        {id: 1, type: "Adamantium", price: 9000},
-        {id: 2, type: "Vibranium", price: 6000},
-        {id: 3, type: "Kryptonite", price:2000},
-        {id: 4, type: "Osmium", price: 4000},
-        {id: 5, type: "Moon Dust", price: 1000, }
-    ],
 
     governors: [
         { id: 1, name: "David Davis", active: true, colonyId: 1  },
@@ -36,6 +28,13 @@ const database = {
         { id: 5, name: "Mimas", active: true },
         { id: 6, name: "Charon", active: true },
         { id: 7, name: "Ariel", active: true },
+    ],
+    minerals: [
+        {id: 1, type: "Adamantium", price: 9000},
+        {id: 2, type: "Vibranium", price: 6000},
+        {id: 3, type: "Kryptonite", price:2000},
+        {id: 4, type: "Osmium", price: 4000},
+        {id: 5, type: "Moon Dust", price: 1000, }
     ],
     
     orderBuilder: {

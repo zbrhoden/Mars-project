@@ -11,11 +11,11 @@ export const willYouBeMine = () => {
         <article class="choices">
             <section class="Facilities">
                 <h2>Active Mining Facilities</h2>
-                    ${Facilities}
+                    ${Facilities()}
             </section>
             <section class="Minerals Chosen">
                 <h2>Chosen Minerals</h2>
-                    ${Minerals}
+                    ${Minerals()}
             </section>
         </article>
 
@@ -25,12 +25,12 @@ export const willYouBeMine = () => {
         
         <article class="Colony Selected">
             <h2>Selected Colony</h2>
-            ${Colonies}
+            ${Colonies()}
         </article>
 
         <article class="Colony Inventory">
             <h2>Available Resources for Colony</h2>
-            ${Governors}
+            ${Governors()}
         </article>
     `
 }

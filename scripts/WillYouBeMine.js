@@ -28,9 +28,16 @@ export const willYouBeMine = () => {
             ${Colonies()}
         </article>
 
+        <article class="Governor Selection">
+        Governors: <select name="subject" id="subject">
+        <option value="" selected="selected">Select subject</option>
+        </select>
+        <br><br>
+        ${Governors()}
+        </article>
+
         <article class="Colony Inventory">
             <h2>Available Resources for Colony</h2>
-            ${Governors()}
         </article>
     `
 }

@@ -16,13 +16,15 @@ document.addEventListener(
 export const Colonies = () => {
     let html = "<ul>"
 
-    // This is how you have been converting objects to <li> elements
-    for (const colony of colonies) {
-        html += `<li>
+    // Use .map() for converting objects to <li> elements
+    const listItems = colonies.map(colony => {
+        return `<li>
             <input type="radio" name="colony" value="${colony.id}" /> ${colony.name}
         </li>`
-    }
+    })
 
+    html += listItems.join("")
     html += "</ul>"
+
     return html
 }

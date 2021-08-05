@@ -43,7 +43,7 @@ const database = {
 }
 
 export const getColonies = () => {
-    return database.minerals.map(mineral => ({ ...mineral }))
+    return database.colonies.map(colony => ({ ...colony }))
 }
 export const getGovernors = () => {
     return database.governors.map(governor => ({ ...governor }))

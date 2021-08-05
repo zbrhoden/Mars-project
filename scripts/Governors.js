@@ -1,17 +1,17 @@
 import { getGovernors, setGovernor } from "./database.js"
 
 
+const governor = getGovernors()
 
 export const Governors = () => {
-    const governor = getGovernors()
-    let html = "<ul>"
+    let html = "<select>"
 
     const listItemsArray = governor.map(governor => {
-        return `<li><input type="radio" name="governor" value="${governor.id}"/> ${governor.name}
-        </li>`
+        return `<option input type="checkbox" name="governor" value=${governor.name}/>${governor.name}
+        </option>`
     })
 
     html += listItemsArray.join("")
-    html += "</ul>"
+    html += "</select>"
     return html
 }

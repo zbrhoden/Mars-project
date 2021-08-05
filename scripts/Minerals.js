@@ -4,6 +4,7 @@ import { getMinerals, setMineral } from "./database.js"
 const minerals = getMinerals()
 
 document.addEventListener(
+
     "change",
     (event) => {
         if (event.target.name === "mineral") {
@@ -28,3 +29,4 @@ export const Minerals = () => {
 
     return html
 }
+

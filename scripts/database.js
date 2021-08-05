@@ -31,14 +31,18 @@ const database = {
 
     ],
     minerals: [
-        {id: 1, type: "Adamantium", price: 9000},
-        {id: 2, type: "Vibranium", price: 6000},
-        {id: 3, type: "Kryptonite", price:2000},
-        {id: 4, type: "Osmium", price: 4000},
-        {id: 5, type: "Moon Dust", price: 1000, }
+        {id: 1, type: "Adamantium", price: 900, quantity: 35},
+        {id: 2, type: "Vibranium", price: 600, quantity: 47},
+        {id: 3, type: "Kryptonite", price:200, quantity: 33},
+        {id: 4, type: "Osmium", price: 400, quantity: 75},
+        {id: 5, type: "Moon Dust", price: 1000, quantity: 12 }
     ],
     
     orderBuilder: {
+    },
+
+    chosenMinerals: {
+
     }
 }
 

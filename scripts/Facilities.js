@@ -7,7 +7,7 @@ import { getFacilities, setFacility } from "./database.js"
 
 
 export const Facilities = () => {
-    const paint = getFacilities()
+    const facility = getFacilities()
     let html = "<ul>"
 
     const listItemsArray = facility.map(facility => {

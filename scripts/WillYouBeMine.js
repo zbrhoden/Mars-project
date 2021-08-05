@@ -1,17 +1,17 @@
 import { Facilities } from "./Facilities.js"
 import { Colonies } from "./Colonies.js"
 import { Minerals } from "./Minerals.js"
-import { Orders } from "./Orders.js"
+// import { Orders } from "./Orders.js"
 import { Governors } from "./Governors.js"
 
-export const WillYouBeMine = () => {
+export const willYouBeMine = () => {
     return `
         <h1>WillYouBeMine</h1>
 
         <article class="choices">
             <section class="Facilities">
                 <h2>Active Mining Facilities</h2>
-            
+                ${Facilities()}
             </section>
             <section class="Minerals Chosen">
                 <h2>Chosen Minerals</h2>

@@ -3,7 +3,7 @@ import { getGovernors, setGovernor } from "./database.js"
 
 
 export const Governors = () => {
-    const paint = getGovernors()
+    const governor = getGovernors()
     let html = "<ul>"
 
     const listItemsArray = governor.map(governor => {

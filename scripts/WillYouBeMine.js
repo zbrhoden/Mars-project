@@ -1,3 +1,8 @@
+import { Facilities } from "./Facilities.js"
+import { Colonies } from "./Colonies.js"
+import { Minerals } from "./Minerals.js"
+import { Orders } from "./Orders.js"
+import { Governors } from "./Governors.js"
 
 export const WillYouBeMine = () => {
     return `

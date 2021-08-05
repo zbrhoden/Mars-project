@@ -1,4 +1,4 @@
-
+import { WillYouBeMine } from "./WillYouBeMine"
 
 
 const mainContainer = document.querySelector("#container")

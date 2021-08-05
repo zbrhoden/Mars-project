@@ -65,4 +65,4 @@ export const setFacility = (id) => {
     database.orderBuilder.facilityId = id
 }
 export const setMineral = (id) => {
-    database.orderBuilder.mineralId = id }
+    database.orderBuilder.mineralId = id}

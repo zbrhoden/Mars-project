@@ -41,3 +41,28 @@ const database = {
     orderBuilder: {
     }
 }
+
+export const getColonies = () => {
+    return database.minerals.map(mineral => ({ ...mineral }))
+}
+export const getGovernors = () => {
+    return database.governors.map(governor => ({ ...governor }))
+}
+export const getFacilities = () => {
+    return database.facilities.map(facility => ({ ...facility }))
+}
+export const getMinerals = () => {
+    return database.minerals.map(mineral => ({ ...mineral }))
+}
+
+export const setColony = (id) => {
+    database.orderBuilder.colonyId = id
+}
+export const setGovernor = (id) => {
+    database.orderBuilder.governorId = id
+}
+export const setFacility = (id) => {
+    database.orderBuilder.facilityId = id
+}
+export const setMineral = (id) => {
+    database.orderBuilder.mineralId = id }

@@ -4,6 +4,23 @@ import { getGovernors, setGovernor } from "./database.js"
 const governor = getGovernors()
 
 
+document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.name === "governor") {
+            setGovernor(parseInt(event.target.value))
+        }
+    }
+)
+
+
+
+
+
+
+
+
+
 {/* <button onclick="myFunction()">Click me</button> */}
 // this code breaks it but we are using it in a minute.
 

@@ -23,8 +23,8 @@ const database = {
     facilities: [
         { id: 1, name: "Callisto", active: true },
         { id: 2, name: "Europa", active: true },
-        { id: 3, name: "Triton", active: false },
-        { id: 4, name: "Rhea", active: false }
+        { id: 3, name: "Triton", active: true },
+        { id: 4, name: "Rhea", active: true }
     ],
     minerals: [
         {id: 1, type: "Adamantium", price: 900, quantity: 35},
@@ -36,7 +36,21 @@ const database = {
     
     orderBuilder: {},
 
-    chosenMinerals: {}
+    chosenMinerals: {},
+
+    facilityMinerals: [
+        {id: 1, mineralId: 1, facilityId: 1, quantityAvailable: 6},
+        {id: 2, mineralId: 5, facilityId: 2, quantityAvailable: 5},
+        {id: 3, mineralId: 2, facilityId: 1, quantityAvailable: 8},
+        {id: 4, mineralId: 2, facilityId: 3, quantityAvailable: 10},
+        {id: 5, mineralId: 4, facilityId: 2, quantityAvailable: 7},
+        {id: 6, mineralId: 1, facilityId: 3, quantityAvailable: 7},
+        {id: 7, mineralId: 3, facilityId: 4, quantityAvailable: 8},
+        {id: 8, mineralId: 3, facilityId: 1, quantityAvailable: 6},
+        {id: 9, mineralId: 3, facilityId: 3, quantityAvailable: 5},
+        {id: 10, mineralId: 4, facilityId: 4, quantityAvailable: 4},
+        {id: 11, mineralId: 1, facilityId: 4, quantityAvailable: 7},
+    ]
 }
 
 export const getColonies = () => {
@@ -52,6 +66,14 @@ export const getMinerals = () => {
     return database.minerals.map(mineral => ({ ...mineral }))
 }
 
+export const getFacilityMinerals = () => {
+    return database.facilityMinerals.map(facilityMineral => ({ ...facilityMineral }))
+}
+
+export const getChosenMinerals = () => {
+    return database.chosenMinerals.map(chosenMineral => ({ ...chosenMineral }))
+}
+
 export const setColony = (id) => {
     database.orderBuilder.colonyId = id
 }
@@ -63,4 +85,17 @@ export const setFacility = (id) => {
 }
 export const setMineral = (id) => {
     database.orderBuilder.mineralId = id 
+}
+
+export const addChosenMinerals = () => {
+    const newOrder = { ...database.orderBuilder }
+    const lastIndex = database.chosenMinerals.length - 1
+        if (lastIndex === -1) {
+            newOrder.id = 1
+        } else {
+            newOrder.id = database.chosenMinerals[lastIndex].id + 1
+        }
+        database.chosenMinerals.push(newOrder)
+        database.orderBuilder = {}
+        document.dispatchEvent(new CustomEvent("stateChanged"))
 }

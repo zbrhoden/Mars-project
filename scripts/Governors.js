@@ -33,7 +33,7 @@ document.addEventListener(
 
 
 export const Governors = () => {
-    let html = "<select>"
+    let html = "<select class=‘governors’><option value='0'>Please select a governor...</option>"
 
     const listItemsArray = governor.map(governor => {
         if (governor.active === true) {

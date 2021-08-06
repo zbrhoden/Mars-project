@@ -22,13 +22,14 @@ export const Facilities = () => {
     let html = "<article id= 'facilities'>"
 
     const listItemsArray = facilities.map(facility => {
-        if (facility.active === true) {
+
+        if (facility.active === true && governor.) {
             return `<div class= "facility options">
-            <input onclick="displayMineral()" type="button" name="facility" value="${facility.name}"/> </div>
+            <button name="facility"/> ${facility.name}</div>
             `
         } else {
             return `<div class= "facility options">
-            <input onclick="displayMineral()" disabled="true" type="button" name="facility" value="${facility.name}"/> </div>
+            <button name="facility" disabled/> ${facility.name}</div>
             `
         }
     }

@@ -15,18 +15,6 @@ document.addEventListener(
     }
 )
 
-// const displayMineral = (facilities) => {
-//     if (facility.id === governor.colonyId && facility.active === governor.active) {
-//         return `<div class= "facility options">
-//         <input onclick="displayMineral()" type="button" name="facility" value="${facility.name}"/> </div>
-//         `
-//     } else {
-//         return `<div class= "facility options">
-//         <input onclick="displayMineral()" disabled="true" type="button" name="facility" value="${facility.name}"/> </div>
-//         `
-//     }
-// }
-
 
 
 
@@ -34,7 +22,7 @@ export const Facilities = () => {
     let html = "<article id= 'facilities'>"
 
     const listItemsArray = facilities.map(facility => {
-        if (governor.active === true && facility.active === true) {
+        if (facility.active === true) {
             return `<div class= "facility options">
             <input onclick="displayMineral()" type="button" name="facility" value="${facility.name}"/> </div>
             `

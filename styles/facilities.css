@@ -1,17 +1,21 @@
 
 
 
-.Facilities {
+/* .Facilities {
     flex-basis: 24%;
     margin: 0 2rem;
     border: 1px dashed dodgerblue;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
-}
-#facility {
+} */
+#facilities {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+.facilityHead {
+    text-align: center;
+}

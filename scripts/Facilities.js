@@ -1,21 +1,30 @@
 import { getFacilities, setFacility } from "./database.js"
 
 
+const facilities = getFacilities()
 
-
+document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.name === "facility") {
+            setChosenMiningFacility(parseInt(event.target.value))
+        }
+    }
+)
 
 
 
 export const Facilities = () => {
-    const facility = getFacilities()
-    let html = "<ul>"
+    let html = "<article id= 'facilities'>"
 
-    const listItemsArray = facility.map(facility => {
-        return `<li><input type="radio" name="facility" value="${facility.id}"/> ${facility.name}
-        </li>`
-    })
+    const listItemsArray = facilities.map(facility => {
+        return `<div class= "facility options">
+        <input type= "button" name="facility" value="${facility.name}"/> </div>
+        `
+    }
+)
 
     html += listItemsArray.join("")
-    html += "</ul>"
+    html += "</article>"
     return html
 }

@@ -3,6 +3,18 @@ import { getGovernors, setGovernor } from "./database.js"
 
 const governor = getGovernors()
 
+
+<button onclick="myFunction()">Click me</button>
+// this code breaks it but we are using it in a minute.
+
+
+
+
+
+
+
+
+
 export const Governors = () => {
     let html = "<select>"
 

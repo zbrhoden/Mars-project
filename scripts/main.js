@@ -1,4 +1,4 @@
-import { willYouBeMine } from "./WillYouBeMine.js"
+import { willYouBeMine } from "./SolarMine.js"
 
 
 const mainContainer = document.querySelector("#container")

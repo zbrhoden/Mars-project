@@ -14,6 +14,8 @@ document.addEventListener(
 
 
 
+
+
 export const Facilities = () => {
     let html = "<article id= 'facilities'>"
 

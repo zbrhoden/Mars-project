@@ -10,14 +10,15 @@ const minerals = facilityMinerals()
 
 export const willYouBeMine = () => {
     return `
-        <h1>WillYouBeMine</h1>
+        <h1>Will You Be Mine</h1>
 
 
         <article class="choices">
             <section class="options Facilities">
                 <h2 class="facilityHead">Active Mining Facilities</h2>
                     ${Facilities()}
-            </section>
+            </section> 
+        </button>
             <div id="calisto" class="individual__facility">
             </div>
             <div id="europa" class="individual__facility">

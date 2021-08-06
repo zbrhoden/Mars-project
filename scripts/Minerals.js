@@ -4,7 +4,6 @@ import { getMinerals, setMineral } from "./database.js"
 const minerals = getMinerals()
 
 document.addEventListener(
-
     "change",
     (event) => {
         if (event.target.name === "mineral") {
@@ -14,14 +13,13 @@ document.addEventListener(
 )
 
 
-export const Minerals = () => {
-    let html = "<ul>"
+export const facilityMinerals = () => {
+    let html = "<div class= 'minerals'>"
 
-    // Use .map() for converting objects to <li> elements
     const listItems = minerals.map(mineral => {
-        return `<li>
+        return `<ul>
             <input type="radio" name="mineral" value="${mineral.id}" /> ${mineral.type}
-        </li>`
+        </ul>`
     })
 
     html += listItems.join("")

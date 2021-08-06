@@ -1,9 +1,5 @@
-@import "details.css";
+@import "facilities.css";
 
 body {
 	background-color: #23272D;
 	color: rgb(97, 96, 96);}
-button,
-input,
-select,
-textarea, 

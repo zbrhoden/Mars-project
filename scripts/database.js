@@ -24,26 +24,19 @@ const database = {
         { id: 1, name: "Callisto", active: true },
         { id: 2, name: "Europa", active: true },
         { id: 3, name: "Triton", active: true },
-        { id: 4, name: "Rhea", active: true },
-        { id: 5, name: "Mimas", active: true },
-        { id: 6, name: "Charon", active: true },
-        { id: 7, name: "Ariel", active: true },
-
+        { id: 4, name: "Rhea", active: true }
     ],
     minerals: [
         {id: 1, type: "Adamantium", price: 900, quantity: 35},
         {id: 2, type: "Vibranium", price: 600, quantity: 47},
         {id: 3, type: "Kryptonite", price:200, quantity: 33},
         {id: 4, type: "Osmium", price: 400, quantity: 75},
-        {id: 5, type: "Moon Dust", price: 1000, quantity: 12 }
+        {id: 5, type: "Moon Dust", price: 1000, quantity: 12}
     ],
     
-    orderBuilder: {
-    },
+    orderBuilder: {},
 
-    chosenMinerals: {
-
-    }
+    chosenMinerals: {}
 }
 
 export const getColonies = () => {

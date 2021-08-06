@@ -43,17 +43,18 @@ const database = {
     },
 
     facilityMinerals: [
-        { id: 1, mineralId: 1, facilityId: 1, quantityAvailable: 6 },
-        { id: 2, mineralId: 5, facilityId: 2, quantityAvailable: 5 },
-        { id: 3, mineralId: 2, facilityId: 1, quantityAvailable: 8 },
-        { id: 4, mineralId: 2, facilityId: 3, quantityAvailable: 10 },
-        { id: 5, mineralId: 4, facilityId: 2, quantityAvailable: 7 },
-        { id: 6, mineralId: 1, facilityId: 3, quantityAvailable: 7 },
-        { id: 7, mineralId: 3, facilityId: 4, quantityAvailable: 8 },
-        { id: 8, mineralId: 3, facilityId: 1, quantityAvailable: 6 },
-        { id: 9, mineralId: 3, facilityId: 3, quantityAvailable: 5 },
-        { id: 10, mineralId: 4, facilityId: 4, quantityAvailable: 4 },
-        { id: 11, mineralId: 1, facilityId: 4, quantityAvailable: 7 },
+      
+        {id: 1, mineralId: 1, facilityId: 1, quantityAvailable: 6, colonyId: 1},
+        {id: 2, mineralId: 5, facilityId: 2, quantityAvailable: 5, colonyId: 2},
+        {id: 3, mineralId: 2, facilityId: 1, quantityAvailable: 8, colonyId: 3},
+        {id: 4, mineralId: 2, facilityId: 3, quantityAvailable: 10, colonyId: 4},
+        {id: 5, mineralId: 4, facilityId: 2, quantityAvailable: 7, colonyId: 5},
+        {id: 6, mineralId: 1, facilityId: 3, quantityAvailable: 7, colonyId: 1},
+        {id: 7, mineralId: 3, facilityId: 4, quantityAvailable: 8, colonyId: 2},
+        {id: 8, mineralId: 3, facilityId: 1, quantityAvailable: 6, colonyId: 3},
+        {id: 9, mineralId: 3, facilityId: 3, quantityAvailable: 5, colonyId: 4},
+        {id: 10, mineralId: 4, facilityId: 4, quantityAvailable: 4, colonyId: 5},
+        {id: 11, mineralId: 1, facilityId: 4, quantityAvailable: 7, colonyId: 6},
     ]
 }
 
@@ -82,7 +83,7 @@ export const setColony = (id) => {
     database.orderBuilder.colonyId = id
 }
 export const setGovernor = (id) => {
-    database.orderBuilder.governorId = id
+    database.orderBuilder.colonyId = id
 }
 export const setFacility = (id) => {
     database.orderBuilder.facilityId = id

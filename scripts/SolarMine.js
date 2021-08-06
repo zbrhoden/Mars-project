@@ -18,10 +18,14 @@ export const willYouBeMine = () => {
                 <h2 class="facilityHead">Active Mining Facilities</h2>
                     ${Facilities()}
             </section>
-            <section class="Minerals Chosen">
-                <h2>Chosen Minerals</h2>
-                    ${facilityMinerals()}
-            </section>
+            <div id="calisto" class="individual__facility">
+            </div>
+            <div id="europa" class="individual__facility">
+            </div>
+            <div id="triton" class="individual__facility">
+            </div>
+            <div id="rhea" class="individual__facility">
+            </div>
         </article>
 
         <article>

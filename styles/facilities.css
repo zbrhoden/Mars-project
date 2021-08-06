@@ -19,3 +19,10 @@
 .facilityHead {
     text-align: center;
 }
+
+.individual__facility {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid black;
+}

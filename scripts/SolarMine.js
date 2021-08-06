@@ -1,6 +1,6 @@
 import { Facilities } from "./Facilities.js"
-import { Colonies } from "./Colonies.js"
-import { facilityMinerals } from "./Minerals.js"
+import { Colonies } from "./ColonyMinerals.js"
+import { facilityMinerals } from "./FacilityMinerals.js"
 //import { Orders } from "./Orders.js"
 import { Governors } from "./Governors.js"
 import { getGovernors } from "./database.js"

@@ -7,7 +7,7 @@ const governor = getGovernors()
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.id === "governor") {
+        if (event.target.name === "governor") {
             const chosenGovernor = parseInt(event.target.value)
             setGovernor(chosenGovernor)
         }
@@ -36,7 +36,7 @@ document.addEventListener(
 export const Governors = () => {
     const order = getOrderBuilder()
     
-    let html = `<select id="governor"><option value="0">Please select a governor...</option>`
+    let html = `<select name="governor"><option value="0">Please select a governor...</option>`
 
     const listItemsArray = governor.map(governor => {
         // if (governor.active === true) {
@@ -45,9 +45,9 @@ export const Governors = () => {
         // } else {
         //     return `<option input type="checkbox" disabled="true" name="governor" value=${governor.id}/> ${governor.name}
         //     </option>`
-        // } 
+        // }             
         
-        if (order.chosenGovernor === governor.id) {
+        if (governor.active === true) {
             return `<option input type="checkbox" name="governor" value=${governor.id}/> ${governor.name}
             </option>`
         } else {

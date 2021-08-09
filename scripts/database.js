@@ -81,7 +81,7 @@ export const getChosenMinerals = () => {
 }
 
 export const getChosenGovernors = () => {
-    return database.chosenGovernors.map(chosenGoverner => ({ ...chosenGovernor }))
+    return database.chosenGovernor.map(chosenGovernor => ({ ...chosenGovernor }))
 }
 
 export const getOrderBuilder = () => {
@@ -92,7 +92,7 @@ export const setColony = (id) => {
     database.orderBuilder.colonyId = id
 }
 export const setGovernor = (id) => {
-    database.orderBuilder.chosenGovernors = id
+    database.orderBuilder.chosenGovernor = id
 }
 export const setFacility = (id) => {
     database.orderBuilder.facilityId = id

@@ -10,7 +10,7 @@ document.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "facility") {
-            setChosenMiningFacility(parseInt(event.target.value))
+            setFacility(parseInt(event.target.value))
         }
     }
 )
@@ -20,7 +20,7 @@ document.addEventListener(
 
 
 export const Facilities = () => {
-    let html = "<article id= 'facilities'>"
+    let html = "<article id= 'facility'>"
 
     const listItemsArray = facilities.map(facility => {
 
@@ -29,7 +29,6 @@ export const Facilities = () => {
             id="facility--${facility.id}">
             ${facility.name}
         </button> `
-
 
     }
 

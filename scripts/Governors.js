@@ -7,8 +7,9 @@ const governor = getGovernors()
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "governor") {
-            setGovernor(parseInt(event.target.value))
+        if (event.target.name === "governors") {
+            const chosenGovernor = parseInt(event.target.value)
+            setGovernor(chosenGovernor)
         }
     }
 )
@@ -33,7 +34,7 @@ document.addEventListener(
 
 
 export const Governors = () => {
-    let html = "<select class=‘governors’><option value='0'>Please select a governor...</option>"
+    let html = "<select name=\"governors\"><option value='0'>Please select a governor...</option>"
 
     const listItemsArray = governor.map(governor => {
         if (governor.active === true) {

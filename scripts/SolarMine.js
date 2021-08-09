@@ -1,12 +1,10 @@
 import { Facilities } from "./Facilities.js"
 import { Colonies } from "./ColonyMinerals.js"
 import { facilityMinerals } from "./FacilityMinerals.js"
-//import { Orders } from "./Orders.js"
 import { Governors } from "./Governors.js"
 import { getGovernors } from "./database.js"
+//import { Orders } from "./ChosenOptions.js"
 
-const governors = getGovernors()
-const minerals = facilityMinerals()
 
 export const willYouBeMine = () => {
     return `
@@ -18,7 +16,7 @@ export const willYouBeMine = () => {
                 <h2 class="facilityHead">Active Mining Facilities</h2>
                     ${Facilities()}
             </section> 
-        </button>
+        
             <div id="calisto" class="individual__facility">
             </div>
             <div id="europa" class="individual__facility">
@@ -28,6 +26,14 @@ export const willYouBeMine = () => {
             <div id="rhea" class="individual__facility">
             </div>
         </article>
+
+        <article class="ChosenMineralHead">Chosen Minerals</article>
+            <section class="ChosenMineralInventory">
+                <div class="ChosenMineral">Testing the CSSTesting the CSSTesting the CSS</div>
+                <div class="ChosenMineral">Testing the CSSTesting the CSSTesting the CSS</div>
+                <div class="ChosenMineral">Testing the CSSTesting the CSSTesting the CSS</div>
+                <div class="ChosenMineral">Testing the CSSTesting the CSSTesting the CSS</div>
+            </section>
 
         <article>
             <button id="orderButton">Purchase Materials</button>

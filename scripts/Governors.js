@@ -1,4 +1,4 @@
-import { getGovernors, setGovernor } from "./database.js"
+import { getGovernors, getOrderBuilder, setGovernor } from "./database.js"
 
 
 const governor = getGovernors()
@@ -7,7 +7,7 @@ const governor = getGovernors()
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "governors") {
+        if (event.target.id === "governor") {
             const chosenGovernor = parseInt(event.target.value)
             setGovernor(chosenGovernor)
         }
@@ -34,17 +34,27 @@ document.addEventListener(
 
 
 export const Governors = () => {
-    let html = "<select name=\"governors\"><option value='0'>Please select a governor...</option>"
+    const order = getOrderBuilder()
+    
+    let html = `<select id="governor"><option value="0">Please select a governor...</option>`
 
     const listItemsArray = governor.map(governor => {
-        if (governor.active === true) {
-            return `<option input type="checkbox" name="governor" value=${governor.name}/> ${governor.name}
-        </option>`
-        } else {
-            return `<option input type="checkbox" disabled="true" name="governor" value=${governor.name}/> ${governor.name}
+        // if (governor.active === true) {
+        //     return `<option input type="checkbox" name="governor" value=${governor.id}/> ${governor.name}
+        // </option>`
+        // } else {
+        //     return `<option input type="checkbox" disabled="true" name="governor" value=${governor.id}/> ${governor.name}
+        //     </option>`
+        // } 
+        
+        if (order.chosenGovernor === governor.id) {
+            return `<option input type="checkbox" name="governor" value=${governor.id}/> ${governor.name}
             </option>`
-        }
-        // we added the disabled class feature to the else statement so the names remained grayed.
+        } else {
+            return `<option input type="checkbox" disabled="true" name="governor" value=${governor.id}/> ${governor.name}
+            </option>`
+        } 
+        
     })
 
     html += listItemsArray.join("")

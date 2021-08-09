@@ -1,7 +1,7 @@
-import { getFacilities, setFacility, getGovernors, setGovernor } from "./database.js"
+import { getFacilities, setFacility, getGovernors, setGovernor, getOrderBuilder } from "./database.js"
 import { Governors } from "./Governors.js"
 
-
+const orderBuilder = getOrderBuilder()
 const governor = getGovernors()
 
 const facilities = getFacilities()
@@ -18,23 +18,22 @@ document.addEventListener(
 
 
 
+
 export const Facilities = () => {
     let html = "<article id= 'facilities'>"
 
     const listItemsArray = facilities.map(facility => {
 
-        if (facility.active === true && governor.) {
-            return `<div class= "facility options">
-            <button name="facility"/> ${facility.name}</div>
-            `
-        } else {
-            return `<div class= "facility options">
-            <button name="facility" disabled/> ${facility.name}</div>
-            `
-        }
+        ` <button $ {orderBuilder.chosenGovernor > 0 ? "" : "disabled"}
+            class="facility__selector"
+            id="facility--${facility.id}">
+            ${facility.name}
+        </button> `
+
+
     }
-    
-)
+
+    )
 
     html += listItemsArray.join("")
     html += "</article>"

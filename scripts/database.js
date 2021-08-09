@@ -35,6 +35,8 @@ const database = {
     ],
 
     orderBuilder: {
+        chosenGovernor: 0,
+        selectedFacility: 0,
     },
 
     chosenMinerals: {

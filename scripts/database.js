@@ -91,14 +91,23 @@ export const getOrderBuilder = () => {
 export const setColony = (id) => {
     database.orderBuilder.colonyId = id
 }
+
 export const setGovernor = (id) => {
     database.orderBuilder.chosenGovernor = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
+
 export const setFacility = (id) => {
     database.orderBuilder.facilityId = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
+
 export const setMineral = (id) => {
     database.orderBuilder.mineralId = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+export const setOrderBuilder = (id) => {
+    database.orderBuilder = id
 }
 
 

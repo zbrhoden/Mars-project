@@ -6,10 +6,10 @@ const governor = getGovernors()
 const facilities = getFacilities()
 
 document.addEventListener(
-    "change",
+    "click",
     (event) => {
         if (event.target.id === "facility") {
-            setFacility(parseInt(event.target.value))
+            setFacility(parseInt(facilityId))
         }
     }
 )
@@ -25,18 +25,13 @@ export const Facilities = () => {
     const listItemsArray = facilities.map(facility => {
         if (order.chosenGovernor > 0) {
             return `<div class = "facility options">
-            <button name="facility" /> ${facility.name}</div> `
-        } else {
+            <button name="facility"> ${facility.name}</div> `
+        } 
+        else {
             return `<div class = "facility options">
-            <button name="facility" disabled /> ${facility.name}</div> `
+            <button name="facility" disabled> ${facility.name}</div> `
         }
 
-
-        // ` <button $ {orderBuilder.chosenGovernor > 0 ? "" : "disabled"}
-        //     class="facility__selector"
-        //     id="facility--${facility.id}">
-        //     ${facility.name}
-        // </button> `
 
 
     }

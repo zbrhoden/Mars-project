@@ -1,25 +1,36 @@
-import { getMinerals, setMineral, getFacilityMinerals, getChosenMinerals} from "./database.js"
+import { getMinerals, setMineral, getFacilityMinerals, getChosenMinerals, setFacility, getOrderBuilder} from "./database.js"
 
 
 const minerals = getMinerals()
+const order = getOrderBuilder()
 
 document.addEventListener(
-    "change",
+    "click",
     (event) => {
-        if (event.target.name === "mineral") {
-            setMineral(parseInt(event.target.value))
+        if (event.target.name === "facility") {
+            setFacility(parseInt(event.target.value))
         }
     }
 )
 
 
-export const facilityMinerals = () => {
-    let html = "<div class= 'minerals'>"
+export const facilityMineral = () => {
+    let html = "<ul>"
+    const facMinerals = getFacilityMinerals()
+    
+    const minerals = facMinerals.filter(mineral => mineral.id)
 
     const listItems = minerals.map(mineral => {
+        if (minerals.mineralId === minerals.id) {
         return `<ul>
-            <input type="radio" name="mineral" value="${mineral.id}" /> ${mineral.type}
+            <input type="radio" name="mineral" value="${minerals.quantityAvailable}" /> ${mineral.type}
         </ul>`
+        } else 
+        if (minerals.mineralId !== minerals.id) {
+        return `<ul>
+            <input type="radio" name="mineral" disabled="true" value="${minerals.quantityAvailable}" /> ${mineral.type}
+        </ul>` 
+        }
     })
 
     html += listItems.join("")
@@ -28,3 +39,8 @@ export const facilityMinerals = () => {
     return html
 }
 
+// export const buttonDisplay = () => {
+//     const listItems = facilityMinerals.map(facilityMineral => {
+
+//     }
+// }

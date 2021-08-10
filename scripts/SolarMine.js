@@ -1,6 +1,6 @@
 import { Facilities } from "./Facilities.js"
 import { Colonies } from "./ColonyMinerals.js"
-import { facilityMinerals } from "./FacilityMinerals.js"
+import { facilityMineral } from "./FacilityMinerals.js"
 import { Governors } from "./Governors.js"
 import { getGovernors } from "./database.js"
 //import { Orders } from "./ChosenOptions.js"
@@ -16,7 +16,8 @@ export const willYouBeMine = () => {
                 <h2 class="facilityHead">Active Mining Facilities</h2>
                     ${Facilities()}
             </section> 
-        
+            <h3 class="facilityMinerals"></h3>
+            ${facilityMineral()}
             <div id="calisto" class="individual__facility">
             </div>
             <div id="europa" class="individual__facility">

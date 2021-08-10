@@ -58,7 +58,6 @@ export const Governors = () => {
         } 
         
     })
-
     html += listItemsArray.join("")
     html += "</select>"
     return html

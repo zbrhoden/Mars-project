@@ -1,9 +1,16 @@
 import { Facilities } from "./Facilities.js"
+<<<<<<< HEAD
+
+import { facilityMinerals } from "./FacilityMinerals.js"
+=======
 import { Colonies } from "./ColonyMinerals.js"
 import { facilityMineral } from "./FacilityMinerals.js"
+>>>>>>> 00c65fd11591ba3cab083973c10436d332048269
 import { Governors } from "./Governors.js"
 import { getGovernors } from "./database.js"
+import { ColonyMinerals } from "./ColonyMinerals.js"
 //import { Orders } from "./ChosenOptions.js"
+
 
 
 export const willYouBeMine = () => {
@@ -42,7 +49,7 @@ export const willYouBeMine = () => {
         
         <article class="Colony Selected">
             <h2>Selected Colony</h2>
-            ${Colonies()}
+           
         </article>
 
     
@@ -53,7 +60,8 @@ export const willYouBeMine = () => {
             ${Governors()}
             </section>
             <section>
-            Colony Resources go here.
+            <h2>Available Colony Minerals</h2>
+                ${ColonyMinerals()}
             </section>
         </article>
     `

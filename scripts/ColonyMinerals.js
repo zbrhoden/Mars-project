@@ -1,45 +1,47 @@
-import { getColonies, setColony, getMinerals, getOrderBuilder, getChosenGovernors } from "./database.js"
+import { getColonies, setColony, getMinerals, getOrderBuilder, getFacilityMinerals, getColonyMinerals } from "./database.js"
+import { Orders } from "./ChosenOptions.js"
 
 const minerals = getMinerals()
 const colonies = getColonies()
+const facMinerals = getFacilityMinerals()
+const colMinerals = getColonyMinerals()
 
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "colony") {
-            setColony(parseInt(event.target.value))
+        if (event.target.name === "minerals") {
+            setMinerals(parseInt(event.target.value))
         }
     }
 )
 
 
-// export const Colonies = () => {
-//     let html = "<ul>"
-
-//     // Use .map() for converting objects to <li> elements
-//     const listItems = colonies.map(colony => {
-//         return `<li>
-//             <input type="radio" name="colony" value="${colony.id}" /> ${colony.name}
-//         </li>`
-//     })
-
-//     html += listItems.join("")
-//     html += "</ul>"
-
-//     return html
-// }
 
 export const ColonyMinerals = () => {
     const order = getOrderBuilder()
+    const listItemsArray = colMinerals.map(colMineral => {
+
     let html = "<ul>"
 
-    const listItems = minerals.map(mineral => {
-        return `>li>
-            <name="minerals" value="${mineral.id}" /> ${mineral.name}
+        
+    
+    const listItems = minerals.map(minerals => {
+        if (minerals.id === facMinerals.id) {
+        return `<li>
+            <name="minerals" value="${colMinerals.id}" /> ${minerals.type}
             </li>
-            `
-    })
-    html += listItems.join("")
-    html += "</ul>"
+            `}
+            else {
+                if (minerals.id !== facMinerals.id)
+            
+            return `<li>
+            <name="minerals" disabled="true" value="${colMinerals.id}" /> ${minerals.type}
+            </li>
+            `}
+    }
+    )
+html += listItems.join("")
+html += "</ul>"
 
 }
+)}

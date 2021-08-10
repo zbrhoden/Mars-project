@@ -43,19 +43,52 @@ const database = {
 
     },
 
+    colonyMinerals: [
+        {
+            id: 1,
+            colonyId:1,
+            mineralId: 1,
+            amount: 3,
+        },
+        {
+            id: 2,
+            colonyId:2,
+            mineralId:3,
+            amount: 4,
+        },
+        {
+            id: 3,
+            colonyId:3,
+            mineralId:5,
+            amount: 6,
+        },
+        {
+            id: 4,
+            colonyId:4,
+            mineralId:4,
+            amount: 8,
+        },
+        {
+            id: 5,
+            colonyId:5,
+            mineralId:3,
+            amount: 6,
+        },
+    ],
+
     facilityMinerals: [
-      
-        {id: 1, mineralId: 1, facilityId: 1, quantityAvailable: 6, colonyId: 1},
-        {id: 2, mineralId: 5, facilityId: 2, quantityAvailable: 5, colonyId: 2},
-        {id: 3, mineralId: 2, facilityId: 1, quantityAvailable: 8, colonyId: 3},
-        {id: 4, mineralId: 2, facilityId: 3, quantityAvailable: 10, colonyId: 4},
-        {id: 5, mineralId: 4, facilityId: 2, quantityAvailable: 7, colonyId: 5},
-        {id: 6, mineralId: 1, facilityId: 3, quantityAvailable: 7, colonyId: 1},
-        {id: 7, mineralId: 3, facilityId: 4, quantityAvailable: 8, colonyId: 2},
-        {id: 8, mineralId: 3, facilityId: 1, quantityAvailable: 6, colonyId: 3},
-        {id: 9, mineralId: 3, facilityId: 3, quantityAvailable: 5, colonyId: 4},
-        {id: 10, mineralId: 4, facilityId: 4, quantityAvailable: 4, colonyId: 5},
-        {id: 11, mineralId: 1, facilityId: 4, quantityAvailable: 7, colonyId: 6},
+
+        { id: 1, mineralId: 1, facilityId: 1, quantityAvailable: 6, colonyId: 1 },
+        { id: 2, mineralId: 5, facilityId: 2, quantityAvailable: 5, colonyId: 2 },
+        { id: 3, mineralId: 2, facilityId: 1, quantityAvailable: 8, colonyId: 3 },
+        { id: 4, mineralId: 2, facilityId: 3, quantityAvailable: 10, colonyId: 4 },
+        { id: 5, mineralId: 4, facilityId: 2, quantityAvailable: 7, colonyId: 5 },
+        { id: 6, mineralId: 1, facilityId: 3, quantityAvailable: 7, colonyId: 1 },
+        { id: 7, mineralId: 3, facilityId: 4, quantityAvailable: 8, colonyId: 2 },
+        { id: 8, mineralId: 3, facilityId: 1, quantityAvailable: 6, colonyId: 3 },
+        { id: 9, mineralId: 3, facilityId: 3, quantityAvailable: 5, colonyId: 4 },
+        { id: 10, mineralId: 4, facilityId: 4, quantityAvailable: 4, colonyId: 5 },
+        { id: 11, mineralId: 1, facilityId: 4, quantityAvailable: 7, colonyId: 6 },
     ]
 }
 
@@ -88,6 +121,10 @@ export const getOrderBuilder = () => {
     return database.orderBuilder
 }
 
+export const getColonyMinerals = () => {
+    return database.colonyMinerals.map(colonyMineral => ({ ...colonyMineral }))
+}
+
 export const setColony = (id) => {
     database.orderBuilder.colonyId = id
 }
@@ -106,6 +143,12 @@ export const setMineral = (id) => {
     database.orderBuilder.mineralId = id
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
+
+export const setColonyMineral = (id) => {
+    database.orderBuilder.colonyMineralId = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
 export const setOrderBuilder = (id) => {
     database.orderBuilder = id
 }

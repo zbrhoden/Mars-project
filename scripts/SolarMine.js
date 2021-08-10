@@ -3,11 +3,9 @@ import { Facilities } from "./Facilities.js"
 import { facilityMinerals } from "./FacilityMinerals.js"
 import { Governors } from "./Governors.js"
 import { getGovernors } from "./database.js"
-<<<<<<< HEAD
 import { ColonyMinerals } from "./ColonyMinerals.js"
-=======
 //import { Orders } from "./ChosenOptions.js"
->>>>>>> db4b7f3522088f4fbef136f465ecfe92a087b0a1
+
 
 
 export const willYouBeMine = () => {

@@ -1,9 +1,10 @@
 import { Facilities } from "./Facilities.js"
-import { Colonies } from "./ColonyMinerals.js"
+
 import { facilityMinerals } from "./FacilityMinerals.js"
 //import { Orders } from "./Orders.js"
 import { Governors } from "./Governors.js"
 import { getGovernors } from "./database.js"
+import { ColonyMinerals } from "./ColonyMinerals.js"
 
 const governors = getGovernors()
 const minerals = facilityMinerals()
@@ -35,7 +36,7 @@ export const willYouBeMine = () => {
         
         <article class="Colony Selected">
             <h2>Selected Colony</h2>
-            ${Colonies()}
+           
         </article>
 
     
@@ -46,7 +47,8 @@ export const willYouBeMine = () => {
             ${Governors()}
             </section>
             <section>
-            Colony Resources go here.
+            <h2>Available Colony Minerals</h2>
+                ${ColonyMinerals()}
             </section>
         </article>
     `

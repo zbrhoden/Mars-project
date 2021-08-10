@@ -1,7 +1,6 @@
 import { getFacilities, setFacility, getGovernors, setGovernor, getOrderBuilder } from "./database.js"
 import { Governors } from "./Governors.js"
 
-const orderBuilder = getOrderBuilder()
 const governor = getGovernors()
 
 const facilities = getFacilities()
